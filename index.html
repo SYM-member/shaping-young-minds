@@ -1,1 +1,324 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shaping Young Minds — Education for Underprivileged Children in India</title>
+  <meta name="description" content="Shaping Young Minds is an India-based charity supporting underprivileged children through education initiatives and community fundraising drives." />
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#0f1b33;
+      --muted:#9bb0d0;
+      --text:#e9f0ff;
+      --accent:#7c5cff;
+      --accent2:#21c7a8;
+      --border:rgba(255,255,255,.12);
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius:18px;
+      --max:1100px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color:var(--text);
+      background: radial-gradient(900px 500px at 20% -10%, rgba(124,92,255,.35), transparent 60%),
+                  radial-gradient(900px 500px at 90% 0%, rgba(33,199,168,.25), transparent 60%),
+                  linear-gradient(180deg, var(--bg), #070b14 60%, #060913);
+      line-height:1.5;
+    }
+    a{color:inherit}
+    .container{max-width:var(--max); margin:0 auto; padding:24px;}
+    header{
+      position:sticky; top:0; z-index:10;
+      backdrop-filter: blur(10px);
+      background: rgba(11,18,32,.7);
+      border-bottom:1px solid var(--border);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between; gap:16px;
+      max-width:var(--max); margin:0 auto; padding:14px 24px;
+    }
+    .brand{display:flex; align-items:center; gap:12px; font-weight:700; letter-spacing:.2px;}
+    .logo{
+      width:40px; height:40px; border-radius:12px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: var(--shadow);
+      display:grid; place-items:center; font-weight:800;
+    }
+    .brand small{display:block; font-weight:500; color:var(--muted); margin-top:1px;}
+    .links{display:flex; gap:14px; flex-wrap:wrap; align-items:center; justify-content:flex-end;}
+    .links a{
+      text-decoration:none; color:var(--muted);
+      padding:8px 10px; border-radius:10px;
+    }
+    .links a:hover{background:rgba(255,255,255,.06); color:var(--text);}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px; padding:12px 16px; border-radius:14px;
+      border:1px solid var(--border);
+      text-decoration:none; font-weight:700;
+      background: rgba(255,255,255,.06);
+      box-shadow: 0 8px 18px rgba(0,0,0,.25);
+    }
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(124,92,255,.95), rgba(33,199,168,.9));
+      border: none;
+      color: #07101f;
+    }
+    .btn:hover{transform: translateY(-1px);}
+    .hero{padding:56px 0 24px;}
+    .grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:22px;
+      align-items:stretch;
+    }
+    @media (max-width: 900px){
+      .grid{grid-template-columns:1fr;}
+      .links{display:none;}
+    }
+    .card{
+      background: rgba(15,27,51,.78);
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding:22px;
+    }
+    h1{font-size:44px; line-height:1.1; margin:0 0 12px;}
+    @media (max-width: 520px){h1{font-size:34px;}}
+    p.lead{color:var(--muted); font-size:18px; margin:0 0 18px;}
+    .badge{
+      display:inline-flex; gap:10px; align-items:center;
+      padding:8px 12px; border-radius:999px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.05);
+      color: var(--muted);
+      font-weight:600; font-size:13px;
+      margin-bottom:14px;
+    }
+    .kpis{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:16px;}
+    .kpi{
+      padding:14px; border-radius:16px; border:1px solid var(--border);
+      background: rgba(255,255,255,.04);
+    }
+    .kpi strong{display:block; font-size:18px;}
+    .kpi span{color:var(--muted); font-size:13px;}
+    .section{padding:18px 0;}
+    .section h2{margin:0 0 10px; font-size:24px;}
+    .muted{color:var(--muted);}
+    .tiles{display:grid; grid-template-columns:repeat(3,1fr); gap:14px;}
+    @media (max-width: 900px){.tiles{grid-template-columns:1fr;}}
+    .tile{
+      padding:18px; border-radius:18px; border:1px solid var(--border);
+      background: rgba(255,255,255,.04);
+    }
+    .tile h3{margin:4px 0 6px; font-size:18px;}
+    .tile p{margin:0; color:var(--muted);}
+    .pill{
+      display:inline-block; font-size:12px; font-weight:700;
+      padding:6px 10px; border-radius:999px;
+      background: rgba(124,92,255,.18);
+      border:1px solid rgba(124,92,255,.35);
+      color:#d9d2ff;
+    }
+    .form{display:grid; gap:10px; margin-top:10px;}
+    input, textarea{
+      width:100%; padding:12px 12px; border-radius:14px;
+      border:1px solid var(--border);
+      background: rgba(0,0,0,.15);
+      color: var(--text);
+      font: inherit;
+    }
+    textarea{min-height:110px; resize:vertical;}
+    footer{padding:26px 0 40px; color:var(--muted); font-size:14px;}
+    .two{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+    @media (max-width: 900px){.two{grid-template-columns:1fr;}}
+    .tiny{font-size:12px; color:var(--muted);}
+    .hr{height:1px; background:var(--border); margin:14px 0;}
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="nav">
+      <div class="brand">
+        <div class="logo">SYM</div>
+        <div>
+          Shaping Young Minds
+          <small>Education initiatives for underprivileged children in India</small>
+        </div>
+      </div>
+      <nav class="links" aria-label="Primary navigation">
+        <a href="#mission">Mission</a>
+        <a href="#initiatives">Initiatives</a>
+        <a href="#impact">Impact</a>
+        <a href="#donate">Donate</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="btn primary" href="#donate">Support a child</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero grid">
+      <div class="card">
+        <div class="badge">📍 India-based • Community-led • Education-first</div>
+        <h1>Turning community support into real learning opportunities.</h1>
+        <p class="lead">
+          We raise funds through initiatives and drives to support the education of underprivileged children in India —
+          including providing devices like iPads so students can access computer education and learning resources.
+        </p>
+
+        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+          <a class="btn primary" href="#donate">Donate / Sponsor</a>
+          <a class="btn" href="#initiatives">See our initiatives</a>
+          <a class="btn" href="#contact">Volunteer</a>
+        </div>
+
+        <div class="kpis" aria-label="Quick highlights">
+          <div class="kpi">
+            <strong>Education support</strong>
+            <span>Fundraising & learning resources</span>
+          </div>
+          <div class="kpi">
+            <strong>Device drives</strong>
+            <span>Old iPads collected & delivered</span>
+          </div>
+          <div class="kpi">
+            <strong>Local impact</strong>
+            <span>Support where it’s needed most</span>
+          </div>
+        </div>
+      </div>
+
+      <aside class="card" id="donate">
+        <h2>Donate</h2>
+        <p class="muted">
+          Add your donation link (Razorpay, Milaap, GiveIndia, etc.). For now, these buttons are placeholders.
+        </p>
+        <div class="hr"></div>
+        <div style="display:grid; gap:10px;">
+          <a class="btn primary" href="https://example.com" target="_blank" rel="noopener">Donate online</a>
+          <a class="btn" href="https://example.com" target="_blank" rel="noopener">Sponsor an initiative</a>
+          <a class="btn" href="#contact">Need a receipt? Contact us</a>
+        </div>
+        <p class="tiny" style="margin-top:12px;">
+          Tip: Replace <b>https://example.com</b> with your real donation page link.
+        </p>
+      </aside>
+    </section>
+
+    <section class="section card" id="mission">
+      <h2>Our mission</h2>
+      <p class="muted" style="margin:0;">
+        Shaping Young Minds supports underprivileged children in India by funding education-focused initiatives.
+        We work with communities to provide practical resources — from learning materials to technology — so students can learn, grow, and build future opportunities.
+      </p>
+    </section>
+
+    <section class="section" id="initiatives">
+      <h2>Initiatives</h2>
+      <p class="muted" style="margin-top:0;">A few examples of what we do. You can edit these anytime.</p>
+
+      <div class="tiles">
+        <div class="tile card">
+          <span class="pill">Fundraising</span>
+          <h3>Community events & campaigns</h3>
+          <p>We run initiatives that raise funds and direct them toward educational needs for children living in poverty.</p>
+        </div>
+
+        <div class="tile card">
+          <span class="pill">Technology access</span>
+          <h3>iPad collection drive</h3>
+          <p>
+            We collected old iPads and delivered them to a school in India so children can access computer education —
+            for many students, holding an iPad is a meaningful step toward digital literacy.
+          </p>
+        </div>
+
+        <div class="tile card">
+          <span class="pill">Support</span>
+          <h3>School resource support</h3>
+          <p>We help direct resources where schools need them most, supporting learning in practical, measurable ways.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section card" id="impact">
+      <h2>Impact (add your real numbers)</h2>
+      <div class="two">
+        <div class="tile" style="background:rgba(255,255,255,.03);">
+          <h3>What we measure</h3>
+          <ul class="muted" style="margin:8px 0 0; padding-left:18px;">
+            <li>Funds raised per initiative</li>
+            <li>Students reached</li>
+            <li>Devices/resources delivered</li>
+            <li>Schools supported</li>
+          </ul>
+        </div>
+        <div class="tile" style="background:rgba(255,255,255,.03);">
+          <h3>Quick placeholders</h3>
+          <p class="muted" style="margin:8px 0 0;">
+            Replace these with your actual data:
+          </p>
+          <ul class="muted" style="margin:8px 0 0; padding-left:18px;">
+            <li><b>XX</b> initiatives completed</li>
+            <li><b>XX</b> students supported</li>
+            <li><b>XX</b> devices delivered</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section card" id="contact">
+      <h2>Contact</h2>
+      <p class="muted" style="margin-top:0;">
+        This simple form uses your email app (no backend). Replace the email address below with your charity email.
+      </p>
+
+      <form class="form" onsubmit="return sendEmail(event)">
+        <input id="name" name="name" placeholder="Your name" required />
+        <input id="email" name="email" type="email" placeholder="Your email" required />
+        <textarea id="message" name="message" placeholder="How would you like to help?" required></textarea>
+        <button class="btn primary" type="submit">Send message</button>
+        <p class="tiny">Or email us directly: <span id="charityEmail">hello@shapingyoungminds.org</span></p>
+      </form>
+    </section>
+
+    <footer class="container">
+      <div class="hr"></div>
+      <div style="display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap;">
+        <div>© <span id="year"></span> Shaping Young Minds</div>
+        <div class="muted">Made with GitHub Pages</div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // Update year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Replace this with your real charity email:
+    const charityEmail = "hello@shapingyoungminds.org";
+    document.getElementById("charityEmail").textContent = charityEmail;
+
+    function sendEmail(e){
+      e.preventDefault();
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      const subject = encodeURIComponent("Website message — Shaping Young Minds");
+      const body = encodeURIComponent(
+        `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+      );
+
+      window.location.href = `mailto:${charityEmail}?subject=${subject}&body=${body}`;
+      return false;
+    }
+  </script>
+</body>
+</html>
 
